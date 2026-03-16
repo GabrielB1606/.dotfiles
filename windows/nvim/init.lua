@@ -27,13 +27,13 @@ vim.pack.add({
   { src = "https://github.com/folke/which-key.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
 
   -- mini
   { src = "https://github.com/nvim-mini/mini.extra" },
   { src = "https://github.com/nvim-mini/mini.pairs" },
 
-  -- just for the sake of IA lol
-  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  -- just for the sake of AI lol
   { src = "https://github.com/MunifTanjim/nui.nvim" },
   { src = "https://github.com/github/copilot.vim" },
   { src = "https://github.com/yetone/avante.nvim" },
@@ -98,3 +98,4 @@ require('keymaps')
 require('plugins.mini')
 require('plugins.avante')
 require('plugins.telescope')
+require('plugins.which-key')
