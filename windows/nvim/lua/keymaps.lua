@@ -52,3 +52,7 @@ vim.api.nvim_set_keymap("v", '<leader>w"', [[c"<c-r>""<esc>]], { noremap = false
 vim.api.nvim_set_keymap("v", "<leader>w`", [[c`<c-r>"`<esc>]], { noremap = false, desc = "Wrap with ``" })
 vim.api.nvim_set_keymap("v", "<leader>we", [[c`${<c-r>"}`<esc>]], { noremap = false, desc = "Wrap with `${}`" })
 vim.api.nvim_set_keymap("v", "<leader>wt", [[c<><c-r>"</><esc>]], { noremap = false, desc = "Wrap with <>" })
+
+-- Diagnostics
+vim.keymap.set('n', '<leader>xX', vim.diagnostic.open_float, { desc = 'Show full diagnostic' })
+vim.keymap.set('n', '<leader>xf', vim.lsp.buf.code_action, { desc = 'Show available code actions / fixes' })

@@ -50,7 +50,7 @@ vim.pack.add({
 })
 
 -- LSP config
-vim.lsp.enable({ "lua_ls", "clangd", "glsl_analyzer", "ccls" })
+vim.lsp.enable({ "lua_ls", "clangd", "glsl_analyzer", "ccls", "wgsl_analyzer", "cmake", "neocmake" })
 vim.keymap.set('n', '<leader>==', vim.lsp.buf.format) -- autoformatting
 
 --- Autocomplete

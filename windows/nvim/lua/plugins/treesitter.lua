@@ -26,6 +26,7 @@ local ensure_installed = {
   "git_rebase",
   "gitignore",
   "hlsl",
+  "wgsl",
 }
 
 local config = require("nvim-treesitter.config")
