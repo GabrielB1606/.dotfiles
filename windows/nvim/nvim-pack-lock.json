@@ -4,6 +4,10 @@
       "rev": "9a7793461549939f1d52b2b309a1aa44680170c8",
       "src": "https://github.com/yetone/avante.nvim"
     },
+    "cmake-tools.nvim": {
+      "rev": "f9a3eb2be0b8148df470244e5c25aede3a3a28a5",
+      "src": "https://github.com/Civitasv/cmake-tools.nvim"
+    },
     "copilot.vim": {
       "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
       "src": "https://github.com/github/copilot.vim"

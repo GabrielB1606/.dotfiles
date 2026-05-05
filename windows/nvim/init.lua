@@ -28,6 +28,7 @@ vim.pack.add({
   { src = "https://github.com/kdheepak/lazygit.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/Civitasv/cmake-tools.nvim" },
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
     branch = "main",
@@ -85,11 +86,19 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 -- C++
 vim.lsp.config("clangd", {
+  before_init = function(_, client_config)
+    local ok, cmake = pcall(require, "cmake-tools")
+    if ok then
+      cmake.clangd_on_new_config(client_config)
+    end
+  end,
   cmd = {
     "clangd",
     "--background-index",
     "--compile-commands-dir=build",
     "--query-driver=D:/dev/mingw64/bin/g++.exe",
+    "--query-driver=C:/Program Files/Microsoft Visual Studio/*/*/VC/Tools/MSVC/*/bin/Hostx64/x64/cl.exe",
+    "--query-driver=C:/Program Files/Microsoft Visual Studio/*/*/VC/Tools/MSVC/*/bin/Hostx64/x86/cl.exe",
   },
   init_options = {
     fallbackFlags = {
@@ -108,3 +117,4 @@ require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.which-key')
 require('plugins.dap')
+require('plugins.cmake')
