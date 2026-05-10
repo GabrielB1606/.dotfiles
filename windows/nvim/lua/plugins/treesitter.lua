@@ -1,33 +1,40 @@
+local project = require("project")
+
 local treesitter = require("nvim-treesitter")
 treesitter.setup({})
+
 local ensure_installed = {
   "vim",
   "vimdoc",
-  "rust",
-  "c",
-  "cpp",
-  "html",
-  "css",
-  "javascript",
+  "lua",
   "json",
-  "lua",
   "markdown",
-  "python",
-  "typescript",
   "bash",
-  "lua",
-  "glsl",
-  "haskell",
-  "jsdoc",
-  "astro",
-  "bibtex",
-  "cmake",
-  "git_config",
-  "git_rebase",
-  "gitignore",
-  "hlsl",
-  "wgsl",
 }
+
+if project.is_web then
+  vim.list_extend(ensure_installed, {
+    "javascript",
+    "typescript",
+    "tsx",
+    "html",
+    "css",
+    "jsdoc",
+    "markdown_inline",
+    "vue",
+  })
+end
+
+if project.is_cpp then
+  vim.list_extend(ensure_installed, {
+    "c",
+    "cpp",
+    "cmake",
+    "glsl",
+    "hlsl",
+    "wgsl",
+  })
+end
 
 local config = require("nvim-treesitter.config")
 
