@@ -57,3 +57,14 @@ vim.keymap.set("n", "<leader>.", "<cmd>cnext<CR>", { desc = "Next quicklist item
 
 -- set <C-b> to toggle nvim-tree
 vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" })
+
+-- Notebooks: <leader>n is freed and notification history moved to <leader>nn
+-- (see lua/plugins/lazyvim-overrides.lua and lua/plugins/jupyter.lua)
+vim.keymap.set("n", "<leader>nn", function()
+  local Snacks = require("snacks")
+  if Snacks.config.picker and Snacks.config.picker.enabled then
+    Snacks.picker.notifications()
+  else
+    Snacks.notifier.show_history()
+  end
+end, { desc = "Notification History" })
