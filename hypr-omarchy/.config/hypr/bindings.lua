@@ -43,7 +43,48 @@ o.bind("SUPER + SHIFT + W", "Typora", { launch = "typora --enable-wayland-ime" }
 o.bind("SUPER + N", "Network", "omarchy-shell shell toggle omarchy.network")
 
 -- Window management
-o.bind("SUPER + Z", nil, "~/.config/hypr/scripts/hypr-monocle.sh")
+-- Monocle: toggle a tabbed group (zoom into one app) for the active workspace.
+o.bind("SUPER + Z", "Monocle", function()
+  local active = hl.get_active_window()
+  if not active or not active.workspace then
+    return
+  end
+
+  local windows = hl.get_workspace_windows(active.workspace)
+
+  local grouped = false
+  for _, win in ipairs(windows) do
+    if win.group then
+      grouped = true
+      break
+    end
+  end
+
+  if grouped then
+    -- Ungroup every grouped window.
+    for _, win in ipairs(windows) do
+      if win.group then
+        hl.dispatch(hl.dsp.focus({ window = win }))
+        hl.dispatch(hl.dsp.window.move({ out_of_group = true }))
+      end
+    end
+  else
+    -- Group the active window, then pull the rest in from all directions.
+    hl.dispatch(hl.dsp.group.toggle())
+    for _, win in ipairs(windows) do
+      if not win.group and win.mapped then
+        hl.dispatch(hl.dsp.focus({ window = win }))
+        hl.dispatch(hl.dsp.window.move({ into_group = "l" }))
+        hl.dispatch(hl.dsp.window.move({ into_group = "r" }))
+        hl.dispatch(hl.dsp.window.move({ into_group = "u" }))
+        hl.dispatch(hl.dsp.window.move({ into_group = "d" }))
+      end
+    end
+  end
+
+  -- Return focus to the originally active window.
+  hl.dispatch(hl.dsp.focus({ window = active }))
+end)
 -- ALT+TAB was: Focus on next window / Reveal active window on top
 hl.unbind("ALT + TAB")
 o.bind("ALT + TAB", nil, hl.dsp.group.next())
