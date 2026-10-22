@@ -1,0 +1,684 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "mcp": {
+    "firebase": {
+      "type": "local",
+      "command": [
+        "firebase",
+        "mcp"
+      ]
+    },
+    "vercel": {
+      "type": "remote",
+      "url": "https://mcp.vercel.com"
+    },
+    "bun": {
+      "type": "remote",
+      "url": "https://bun.com/docs/mcp"
+    },
+    "ofapi": {
+      "type": "remote",
+      "url": "https://app.onlyfansapi.com/mcp/onlyfans-mcp"
+    }
+  },
+  "providers": {
+    "vibi": {
+      "name": "Vibi",
+      "env": [
+        "VIBI_API_KEY"
+      ],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://vibi.top/v1"
+      },
+      "models": {
+        "claude-opus-5-5": {
+          "name": "Claude Opus 5.5",
+          "family": "claude-opus",
+          "releaseDate": "2026-09-22",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-opus-5": {
+          "name": "Claude Opus 5",
+          "family": "claude-opus",
+          "releaseDate": "2026-07-24",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-opus-4-8": {
+          "name": "Claude Opus 4.8",
+          "family": "claude-opus",
+          "releaseDate": "2026-05-28",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-opus-4-7": {
+          "name": "Claude Opus 4.7",
+          "family": "claude-opus",
+          "releaseDate": "2026-04-14",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "disabled": true
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6",
+          "family": "claude-opus",
+          "releaseDate": "2026-02-04",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5",
+          "family": "claude-sonnet",
+          "releaseDate": "2026-06-29",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "toggle": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6",
+          "family": "claude-sonnet",
+          "releaseDate": "2026-02-17",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-fable-5-1": {
+          "name": "Claude Fable 5.1",
+          "family": "claude-fable",
+          "releaseDate": "2026-09-01",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-fable-5": {
+          "name": "Claude Fable 5",
+          "family": "claude-fable",
+          "releaseDate": "2026-06-07",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        },
+        "claude-haiku-4-5-20251001": {
+          "name": "Claude Haiku 4.5",
+          "family": "claude-haiku",
+          "releaseDate": "2025-10-15",
+          "package": "@opencode/ai/providers/anthropic-compatible",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "budget": {
+                "min": 1024
+              }
+            }
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "disabled": true
+        },
+        "gpt-6.1-sol": {
+          "name": "GPT-6.1 Sol",
+          "family": "gpt-sol",
+          "releaseDate": "2026-09-29",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6-sol": {
+          "name": "GPT-6 Sol",
+          "family": "gpt-sol",
+          "releaseDate": "2026-09-22",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6-astra": {
+          "name": "GPT-6 Astra",
+          "family": "gpt-astra",
+          "releaseDate": "2026-09-04",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "family": "gpt-sol",
+          "releaseDate": "2026-07-09",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-terra": {
+          "name": "GPT-5.6 Terra",
+          "family": "gpt-terra",
+          "releaseDate": "2026-07-09",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "family": "gpt-luna",
+          "releaseDate": "2026-07-09",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-5.5": {
+          "name": "GPT-5.5",
+          "family": "gpt",
+          "releaseDate": "2026-04-23",
+          "package": "@opencode/ai/providers/openai/responses",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh"
+              ]
+            }
+          },
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          },
+          "disabled": true
+        },
+        "deepseek-v4.1-flash": {
+          "name": "DeepSeek V4.1 Flash",
+          "family": "deepseek-flash",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "toggle": true,
+              "effort": [
+                "low",
+                "high",
+                "max"
+              ]
+            }
+          },
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          }
+        },
+        "qwen3.8-flash": {
+          "name": "Qwen3.8 Flash",
+          "family": "qwen",
+          "releaseDate": "2026-08-26",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "toggle": true,
+              "effort": [
+                "low",
+                "medium",
+                "xhigh"
+              ]
+            }
+          },
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "glm-5.3-flash": {
+          "name": "GLM-5.3-Flash",
+          "family": "glm-flash",
+          "releaseDate": "2026-08-26",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "video",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": true,
+            "reasoning": {
+              "supported": true,
+              "effort": [
+                "low",
+                "high",
+                "max"
+              ]
+            }
+          },
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        }
+      }
+    }
+  }
+}

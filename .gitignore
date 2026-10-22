@@ -1,0 +1,8 @@
+.env
+
+# opencode keeps runtime state (service.json with credentials, node_modules,
+# lockfiles, backups) next to its config, so only allowlisted files are tracked
+opencode/.config/opencode/*
+!opencode/.config/opencode/opencode.json
+!opencode/.config/opencode/cli.json
+!opencode/.config/opencode/tui.json

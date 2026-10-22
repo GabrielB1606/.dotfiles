@@ -9,3 +9,6 @@ stow nvim
 
 # neovim python venv (jupytext, molten-nvim, pynvim...)
 ./setup-nvim-venv.sh
+
+# opencode config + vibi.top provider key (needs .env, see .env.example)
+./setup-opencode.sh
