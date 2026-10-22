@@ -56,4 +56,7 @@ echo "Linked $TARGET -> $(readlink "$TARGET")"
 # This stops the service; the next opencode command starts it with the key.
 opencode service set env VIBI_API_KEY "$VIBI_API_KEY" >/dev/null
 
+# Link Hermes skills into OpenCode (if Hermes is installed)
+./link-hermes-skills.sh
+
 opencode auth list

@@ -6,3 +6,6 @@ opencode/.config/opencode/*
 !opencode/.config/opencode/opencode.json
 !opencode/.config/opencode/cli.json
 !opencode/.config/opencode/tui.json
+!opencode/.config/opencode/SKILLS.md
+# Hermes skills symlink is created by setup-opencode.sh
+opencode/.config/opencode/skills
