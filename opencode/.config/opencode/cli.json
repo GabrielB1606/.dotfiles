@@ -12,5 +12,12 @@
     "scrollbar": false,
     "thinking": "hide"
   },
-  "animations": true
+  "animations": true,
+  "prompt": {
+    "image_preview": true,
+    "paste": "full"
+  },
+  "attention": {
+    "sound": true
+  }
 }
