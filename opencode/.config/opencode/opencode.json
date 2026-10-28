@@ -20,6 +20,12 @@
     "ofapi": {
       "type": "remote",
       "url": "https://app.onlyfansapi.com/mcp/onlyfans-mcp"
+    },
+    "servers": {
+      "aws": {
+        "type": "remote",
+        "url": "https://aws-mcp.us-east-1.api.aws/mcp?oauth=initialize"
+      }
     }
   },
   "providers": {
