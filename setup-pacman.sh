@@ -6,6 +6,7 @@
 
 # stow configs
 stow nvim
+stow vim
 
 # neovim python venv (jupytext, molten-nvim, pynvim...)
 ./setup-nvim-venv.sh
